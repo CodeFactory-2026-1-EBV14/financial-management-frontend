@@ -33,7 +33,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
   { id: "OTROS", name: "Otros" },
 ];
 
-const API_URL = "https://financial-management-api-2.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080";
 
 const getToken = () => localStorage.getItem("authToken");
 

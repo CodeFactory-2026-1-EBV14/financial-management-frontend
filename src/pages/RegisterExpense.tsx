@@ -38,7 +38,7 @@ export default function RegisterExpense() {
         const token = localStorage.getItem("authToken");
         if (!token) return;
 
-        const response = await fetch("http://localhost:8080/api/categorias", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL ?? "http://localhost:8080"}/api/categorias`, {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`,
@@ -68,7 +68,7 @@ export default function RegisterExpense() {
       const token = localStorage.getItem("authToken");
       if (!token) return;
 
-      const response = await fetch("http://localhost:8080/api/alertas/presupuesto", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? "http://localhost:8080"}/api/alertas/presupuesto`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -124,7 +124,7 @@ export default function RegisterExpense() {
       // ✨ Usar directamente el ID de la categoría del backend
       const backendCategoryId = parseInt(categoriaId);
 
-      const response = await fetch("http://localhost:8080/api/gastos", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? "http://localhost:8080"}/api/gastos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

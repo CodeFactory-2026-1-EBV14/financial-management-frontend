@@ -29,7 +29,7 @@ export default function Login() {
     setCargando(true);
     try {
       // Le pegamos al back con el email y password
-      const response = await fetch("http://localhost:8080/api/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? "http://localhost:8080"}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

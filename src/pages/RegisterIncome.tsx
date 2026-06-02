@@ -36,7 +36,7 @@ export default function RegisterIncome() {
       }
 
       // ✨ HU-008: Llamar a /api/transactions con tipo INGRESO
-      const response = await fetch("http://localhost:8080/api/transactions", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL ?? "http://localhost:8080"}/api/transactions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
